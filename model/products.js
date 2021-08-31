@@ -9,8 +9,8 @@ const productsSchema = new mongoose.Schema({
         default:4.5
         },
     featured:{
-        type:String,
-        default:[false,'Kindly provide a name']
+        type:Boolean,
+        default:false
         },
     price:{
         type:Number,
@@ -20,11 +20,11 @@ const productsSchema = new mongoose.Schema({
         type:Date,
         default:Date.now()
         },
-    companies:{
+    company:{
         type:String,
         enum:{
-            values:['ikea,caressa,liddy,marcos'],
-            message:'{VALUES} is not supported'
+            values:['ikea','caressa','liddy','marcos'],
+            message:'{VALUE} is not supported'
         }
     }
 })
